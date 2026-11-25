@@ -1,0 +1,420 @@
+/*
+  Gavin Lao - Project 2
+  Project 3: adds min-width media queries (mobile first) and map.html styles.
+  One shared stylesheet for index.html, resume.html, page3.html, and map.html.
+  Order: base rules, navigation, Home styles, Resume styles, Personal styles.
+  Home and Personal use a fluid layout (%, rem, max-width).
+  Resume uses a fixed width layout (800px).
+*/
+
+/* Base rules shared by every page */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #1f2933;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+header {
+  padding-bottom: 1.5rem;
+  text-align: center;
+}
+
+header h1,
+header p {
+  max-width: 45rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+footer {
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Navigation: identical on every page */
+
+/* Removes the bullets from the navigation list on all three pages */
+nav ul {
+  list-style: none;
+}
+
+/* Centers the navigation horizontally */
+nav {
+  background-color: #102a43;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 1rem;
+}
+
+nav li {
+  margin: 0 1rem;
+}
+
+nav a {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Home page (fluid layout) ===== */
+
+/* Style 1 (Home): page background color */
+.home {
+  background-color: #eef2f7;
+}
+
+/* Style 2 (Home): gradient header banner with white text */
+.home header {
+  background: linear-gradient(135deg, #1d4e89, #00a6a6);
+  color: #ffffff;
+}
+
+/* Style 3 (Home): large page title */
+.home h1 {
+  margin: 1rem 0 0.5rem;
+  font-size: 2rem;
+  letter-spacing: 0.02em;
+}
+
+/* Style 4 (Home): fluid content column, 90% wide with a maximum width */
+.home main {
+  width: 94%;
+  max-width: 1000px;
+  margin: 1rem auto;
+}
+
+/* Style 5 (Home): content sections styled as white cards */
+.home section {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.12);
+}
+
+/* Style 6 (Home): headings with an accent underline */
+.home h2 {
+  margin-top: 0;
+  padding-bottom: 0.25rem;
+  color: #1d4e89;
+  border-bottom: 0.2rem solid #00a6a6;
+}
+
+/* Style 7 (Home): round portrait with a colored border */
+.home main > figure {
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+
+.home main > figure img {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  border: 0.25rem solid #00a6a6;
+  border-radius: 50%;
+}
+
+/* Style 8 (Home): skyline photo fills its card, captions in gray italics */
+.home section img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.home figcaption {
+  color: #52606d;
+  font-style: italic;
+}
+
+/* Style 9 (Home): link colors */
+.home main a {
+  color: #1d4e89;
+  font-weight: bold;
+}
+
+.home main a:hover {
+  color: #00a6a6;
+}
+
+/* ===== Resume page (fixed width layout) ===== */
+
+/* Style 1 (Resume): gray page background */
+.resume {
+  background-color: #d9dee5;
+}
+
+/* Style 2 (Resume): dark header with white text */
+.resume header {
+  background-color: #243b53;
+  color: #ffffff;
+}
+
+.resume header a {
+  color: #bcccdc;
+}
+
+/* Style 3 (Resume): fixed 800px paper-style content area */
+.resume main {
+  width: 800px;
+  margin: 2rem auto;
+  padding: 2rem 2.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.resume footer {
+  width: 800px;
+  margin: 0 auto 1rem;
+}
+
+/* Style 4 (Resume): uppercase section headings with a rule underneath */
+.resume h2 {
+  margin-top: 0;
+  padding-bottom: 0.25rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #243b53;
+  border-bottom: 2px solid #243b53;
+}
+
+/* Style 5 (Resume): job and school entries with a left accent bar */
+.resume article {
+  margin-bottom: 1.25rem;
+  padding-left: 1rem;
+  border-left: 4px solid #9fb3c8;
+}
+
+/* Style 6 (Resume): italic blue employer names */
+.resume h3 {
+  margin-bottom: 0;
+}
+
+.resume h4 {
+  margin: 1rem 0 0.25rem;
+  font-style: italic;
+  color: #486581;
+}
+
+/* Style 7 (Resume): bold skill labels with indented values */
+.resume dt {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.resume dd {
+  margin-left: 1.5rem;
+}
+
+/* ===== Personal page (fluid layout) ===== */
+
+/* Style 1 (Personal): warm page background */
+.personal {
+  background-color: #fff4e6;
+}
+
+/* Style 2 (Personal): track-red header with a yellow lane line */
+.personal header {
+  background-color: #b5251d;
+  color: #ffffff;
+  border-bottom: 0.5rem solid #f5b82e;
+}
+
+/* Style 3 (Personal): fluid card layout that wraps based on screen width */
+.personal main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 92%;
+  max-width: 1100px;
+  margin: 2rem auto;
+}
+
+.personal section {
+  flex: 1 1 22rem;
+  max-width: calc(100% - 1.5rem);
+  margin: 0.75rem;
+  padding: 1.5rem;
+  /* Style 4 (Personal): white cards with a red top border */
+  background-color: #ffffff;
+  border-top: 0.3rem solid #b5251d;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.12);
+}
+
+/* Style 5 (Personal): red event names with spaced descriptions */
+.personal h2 {
+  margin-top: 0;
+  color: #b5251d;
+}
+
+.personal dt {
+  color: #b5251d;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.personal dd {
+  margin: 0 0 1rem;
+}
+
+/* Style 6 (Personal): numbered steps with bold red numbers */
+.personal ol {
+  padding-left: 1.5rem;
+}
+
+.personal li {
+  margin-bottom: 0.75rem;
+}
+
+.personal li::marker {
+  color: #b5251d;
+  font-weight: bold;
+}
+
+/* Style 7 (Personal): rounded photos that scale with their card */
+.personal figure {
+  margin: 1rem 0 0;
+}
+
+.personal img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.personal figcaption {
+  color: #52606d;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ===== Map page ===== */
+.mappage {
+  background-color: #eef2f7;
+}
+
+.mappage header {
+  background-color: #1d4e89;
+  color: #ffffff;
+}
+
+.mappage main {
+  width: 94%;
+  max-width: 1000px;
+  margin: 1.5rem auto;
+}
+
+.mappage section {
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.12);
+}
+
+.mappage h2 {
+  margin-top: 0;
+  color: #1d4e89;
+}
+
+#map {
+  width: 100%;
+  height: 22rem;
+  border-radius: 0.5rem;
+}
+
+.mappage button {
+  margin-right: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #1d4e89;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.mappage button:hover {
+  background-color: #00a6a6;
+}
+
+/* ===== Mobile friendly home page (min-width, mobile first) ===== */
+
+/* Tablets and up: 40rem (640px) */
+@media (min-width: 40rem) {
+  /* Change 1: larger page title */
+  .home h1 {
+    margin: 1.5rem 0 0.5rem;
+    font-size: 3rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* Change 2: roomier cards */
+  .home section {
+    padding: 1.5rem 2rem;
+  }
+
+  /* Change 3: larger portrait */
+  .home main > figure img {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  /* Change 4: larger bordered content margin */
+  .home main {
+    width: 90%;
+    margin: 2rem auto;
+  }
+
+  .personal section {
+    padding: 1.5rem;
+  }
+
+  #map {
+    height: 30rem;
+  }
+}
+
+/* Desktops and up: 64rem (1024px) */
+@media (min-width: 64rem) {
+  /* Change 1: wider, centered header text */
+  .home header p {
+    max-width: 55rem;
+    font-size: 1.15rem;
+  }
+
+  /* Change 2: bigger navigation spacing */
+  .home nav li {
+    margin: 0 2rem;
+  }
+
+  /* Change 3: two-column bullet list inside the build card */
+  .home section ul {
+    column-count: 2;
+    column-gap: 2rem;
+  }
+
+  /* Change 4: skyline photo capped in height */
+  .home section img {
+    max-height: 26rem;
+    object-fit: cover;
+  }
+}
